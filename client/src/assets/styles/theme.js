@@ -1,5 +1,10 @@
 export const theme = {
-  colors: {},
+  colors: {
+    semiWhite: "#EEEEEE",
+    mint: "#32E0C4",
+    hardGrey: "#393E46",
+    black: "#222831",
+  },
   fontSize: {
     xxs: "1rem",
     xs: "1.2rem",
