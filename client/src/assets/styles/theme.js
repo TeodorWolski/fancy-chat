@@ -2,7 +2,11 @@ export const theme = {
   colors: {
     semiWhite: "#EEEEEE",
     mint: "#32E0C4",
-    hardGrey: "#393E46",
+    moreMint: "#21e6c1",
+    oceanBlue: "#278ea5",
+    darkBlue: "#1f4287",
+    veryDarkBlue: "#071e3d",
+    darkGrey: "#393E46",
     black: "#222831",
   },
   fontSize: {

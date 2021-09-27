@@ -11,9 +11,7 @@ const client = StreamChat.getInstance(ApiKey);
 
 const ChatView = () => (
   <div>
-    <Chat client={client}>
-      <Heading>lol</Heading>
-    </Chat>
+    <Chat client={client}></Chat>
   </div>
 );
 
