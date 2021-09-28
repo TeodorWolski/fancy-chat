@@ -5,10 +5,14 @@ import {
   StyledList,
   ChatsWrapper,
   StyledHeading,
+  StyledInput,
 } from "./Sidebar.styles";
 import ButtonIcon from "components/atoms/ButtonIcon/ButtonIcon";
 import ChampagneIcon from "assets/icons/ChampagneIcon.svg";
 import LogoutIcon from "assets/icons/LogoutIcon.svg";
+import TeamChannelList from "components/molecules/TeamChannelList/TeamChannelList";
+import { ChannelList, useChatContext } from "stream-chat-react";
+import Cookies from "universal-cookie";
 
 const Sidebar = () => (
   <Wrapper>
@@ -24,6 +28,12 @@ const Sidebar = () => (
     </IconsWrapper>
     <ChatsWrapper>
       <StyledHeading>Fancy</StyledHeading>
+      <StyledInput search />
+      {/* <ChannelList
+        filters={{}}
+        channelRenderFilterFn={() => {}}
+        List={(listProps) => <TeamChannelList {...listProps} type="team" />}
+      /> */}
     </ChatsWrapper>
   </Wrapper>
 );

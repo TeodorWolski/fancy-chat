@@ -2,10 +2,10 @@ import styled, { css } from "styled-components";
 import MagnifierIcon from "assets/icons/MagnifierIcon.svg";
 
 const Input = styled.input`
-  border-radius: 50px;
+  border-radius: 5rem;
   border: none;
-  padding: 15px 30px;
-  background-color: ${({ theme }) => theme.grey100};
+  padding: 1.5rem 3rem;
+  background-color: hsl(0, 0%, 96%);
   font-size: ${({ theme }) => theme.fontSize.s};
   font-weight: ${({ theme }) => theme.regular};
   ::placeholder {
@@ -15,10 +15,10 @@ const Input = styled.input`
   ${({ search }) =>
     search &&
     css`
-      background-size: 15px;
-      padding: 10px 20px 10px 40px;
+      background-size: 2rem;
+      padding: 1rem 0.5rem 1rem 0.5rem;
       font-size: ${({ theme }) => theme.fontSize.xs};
-      background-position: 15px;
+      background-position: 12rem;
       background-image: url(${MagnifierIcon});
       background-repeat: no-repeat;
     `}

@@ -11,7 +11,7 @@ const client = StreamChat.getInstance(ApiKey);
 
 const ChatView = () => (
   <div>
-    <Chat client={client}></Chat>
+    <Chat client={client}>dupcia</Chat>
   </div>
 );
 
