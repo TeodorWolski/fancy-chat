@@ -12,15 +12,14 @@ const ChannelListWrapper = styled.div``;
 const TeamChannelList = ({ children, error = false, loading, type }) => (
   <Wrapper>
     <InfoWrapper>
-      <div>{error && <Paragraph>Connection error</Paragraph>}</div>
-
-      <div>
+      <Paragraph>{error && <Paragraph>Connection error</Paragraph>}</Paragraph>
+      <ChannelListWrapper>
         {loading && (
           <Paragraph>{type === "team" ? "Channels" : "Messages"}</Paragraph>
         )}
-      </div>
+      </ChannelListWrapper>
     </InfoWrapper>
-    <ChannelListWrapper>{children}</ChannelListWrapper>
+    <div>{children}</div>
   </Wrapper>
 );
 
