@@ -29,11 +29,11 @@ const Sidebar = () => (
     <ChatsWrapper>
       <StyledHeading>Fancy</StyledHeading>
       <StyledInput search />
-      {/* <ChannelList
+      <ChannelList
         filters={{}}
         channelRenderFilterFn={() => {}}
         List={(listProps) => <TeamChannelList {...listProps} type="team" />}
-      /> */}
+      />
     </ChatsWrapper>
   </Wrapper>
 );

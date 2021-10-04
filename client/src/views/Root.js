@@ -1,16 +1,13 @@
 import React from "react";
 import MainTemplate from "components/templates/MainTemplate/MainTemplate";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-import ChatView from "./ChatView/ChatView";
-import ViewTemplate from "components/templates/ViewTemplate/ViewTemplate";
+import ChatViewTemplate from "components/templates/ChatViewTemplate/ChatViewTemplate";
 
 const Root = () => (
   <Router>
     <Switch>
       <MainTemplate>
-        <ViewTemplate>
-          <ChatView />
-        </ViewTemplate>
+        <ChatViewTemplate />
       </MainTemplate>
     </Switch>
   </Router>
