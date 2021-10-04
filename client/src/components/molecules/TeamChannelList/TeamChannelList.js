@@ -1,21 +1,23 @@
 import React from "react";
-import styled from "styled-components";
+import {
+  Wrapper,
+  InfoWrapper,
+  StyledParagraph,
+  ChannelListWrapper,
+} from "./TeamChannelList.styles";
 import PropTypes from "prop-types";
-import Paragraph from "components/atoms/Paragraph/Paragraph";
-
-const Wrapper = styled.div``;
-
-const InfoWrapper = styled.div``;
-
-const ChannelListWrapper = styled.div``;
 
 const TeamChannelList = ({ children, error = false, loading, type }) => (
   <Wrapper>
     <InfoWrapper>
-      <Paragraph>{error && <Paragraph>Connection error</Paragraph>}</Paragraph>
+      <StyledParagraph>
+        {error && <StyledParagraph>Connection error</StyledParagraph>}
+      </StyledParagraph>
       <ChannelListWrapper>
         {loading && (
-          <Paragraph>{type === "team" ? "Channels" : "Messages"}</Paragraph>
+          <StyledParagraph>
+            {type === "team" ? "Channels" : "Messages"}
+          </StyledParagraph>
         )}
       </ChannelListWrapper>
     </InfoWrapper>
