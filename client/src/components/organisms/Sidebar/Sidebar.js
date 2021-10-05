@@ -13,6 +13,7 @@ import LogoutIcon from "assets/icons/LogoutIcon.svg";
 import TeamChannelList from "components/molecules/TeamChannelList/TeamChannelList";
 import { ChannelList, useChatContext } from "stream-chat-react";
 import Cookies from "universal-cookie";
+import ChannelPreview from "components/organisms/ChannelPreview/ChannelPreview";
 
 const Sidebar = () => (
   <Wrapper>
@@ -33,6 +34,9 @@ const Sidebar = () => (
         filters={{}}
         channelRenderFilterFn={() => {}}
         List={(listProps) => <TeamChannelList {...listProps} type="team" />}
+        Preview={(previewProps) => (
+          <ChannelPreview {...previewProps} type="team" />
+        )}
       />
     </ChatsWrapper>
   </Wrapper>
