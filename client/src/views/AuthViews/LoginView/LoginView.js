@@ -2,8 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import BackgroundIcon from "assets/icons/AuthBackground.svg";
 import Heading from "components/atoms/Heading/Heading";
-import Input from "components/atoms/Input/Input";
 import Button from "components/atoms/Button/Button";
+import FormInput from "components/atoms/FormInput/FormInput";
+import { Link } from "react-router-dom";
+import { routes } from "routes";
+import Paragraph from "components/atoms/Paragraph/Paragraph";
 
 const Wrapper = styled.div`
   background-image: url(${BackgroundIcon});
@@ -15,7 +18,7 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-const FormWrapper = styled.div`
+const CardWrapper = styled.div`
   width: 50rem;
   height: 50rem;
   border-radius: 1.5rem;
@@ -39,27 +42,44 @@ const StyledHeading = styled(Heading)`
   }
 `;
 
-const StyledInput = styled(Input)`
-  position: relative;
-  margin-top: 5rem;
-  width: 35rem;
-  background-color: ${({ theme }) => theme.colors.halfWhite};
-`;
-
 const StyledButton = styled(Button)`
   background-color: ${({ theme }) => theme.colors.moreMint};
   position: relative;
-  top: 7rem;
+  top: 5rem;
+  cursor: pointer;
+`;
+
+const StyledLink = styled(Link)`
+  position: relative;
+  margin-top: 1%;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: ${({ theme }) => theme.fontSize.xs};
+  top: 14%;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.moreMint};
+  }
+`;
+
+const StyledParagraph = styled(Paragraph)`
+  margin: -2%;
+  padding: 0;
 `;
 
 const LoginView = () => (
   <Wrapper>
-    <FormWrapper>
+    <CardWrapper>
       <StyledHeading>Fancy</StyledHeading>
-      <StyledInput />
-      <StyledInput />
+      <StyledParagraph>
+        Fancy people, fancy topics, fancy lifestyle.
+      </StyledParagraph>
+      <FormInput name="e-mail" type="email" />
+      <FormInput name="password" type="password" />
       <StyledButton>Log in</StyledButton>
-    </FormWrapper>
+      <StyledLink to={routes.forgotPassword}>Forgot password?</StyledLink>
+      <StyledLink to={routes.register}>Need an account?</StyledLink>
+    </CardWrapper>
   </Wrapper>
 );
 
