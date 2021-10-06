@@ -3,7 +3,6 @@ import {
   Wrapper,
   CardWrapper,
   StyledHeading,
-  StyledParagraph,
   StyledButton,
   StyledLink,
 } from "./LoginView.styles";
@@ -14,9 +13,6 @@ const LoginView = () => (
   <Wrapper>
     <CardWrapper>
       <StyledHeading>Fancy</StyledHeading>
-      <StyledParagraph>
-        Fancy people, fancy topics, fancy lifestyle.
-      </StyledParagraph>
       <FormInput name="e-mail" type="email" />
       <FormInput name="password" type="password" />
       <StyledButton>Log in</StyledButton>

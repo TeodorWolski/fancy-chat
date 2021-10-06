@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 
 export const CardWrapper = styled.div`
   width: 50rem;
-  height: 50rem;
+  height: 80rem;
   border-radius: 1.5rem;
   background-color: #2c2c2c;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
@@ -51,8 +51,8 @@ export const StyledLink = styled(Link)`
   margin-top: 1%;
   text-decoration: none;
   color: #ffffff;
-  font-size: ${({ theme }) => theme.fontSize.xs};
-  top: 14%;
+  font-size: ${({ theme }) => theme.fontSize.s};
+  top: 9%;
 
   &:hover {
     color: ${({ theme }) => theme.colors.moreMint};
