@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Wrapper,
   CardWrapper,
@@ -9,17 +9,45 @@ import {
 import FormInput from "components/atoms/FormInput/FormInput";
 import { routes } from "routes";
 
-const LoginView = () => (
-  <Wrapper>
-    <CardWrapper>
-      <StyledHeading>Fancy</StyledHeading>
-      <FormInput placeholder="e-mail" name="e-mail" type="email" />
-      <FormInput placeholder="password" name="password" type="password" />
-      <StyledButton>Log in</StyledButton>
-      <StyledLink to={routes.forgotPassword}>Forgot password?</StyledLink>
-      <StyledLink to={routes.register}>Need an account?</StyledLink>
-    </CardWrapper>
-  </Wrapper>
-);
+const initialState = {
+  email: "",
+  password: "",
+};
+
+const LoginView = () => {
+  const [formValues, setFormValues] = useState(initialState);
+
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <Wrapper>
+        <CardWrapper>
+          <StyledHeading>Fancy</StyledHeading>
+          <FormInput
+            handleChange={handleChange}
+            placeholder="e-mail"
+            name="email"
+            type="email"
+          />
+          <FormInput
+            handleChange={handleChange}
+            placeholder="password"
+            name="password"
+            type="password"
+          />
+          <StyledButton type="submit">Log in</StyledButton>
+          <StyledLink to={routes.forgotPassword}>Forgot password?</StyledLink>
+          <StyledLink to={routes.register}>Need an account?</StyledLink>
+        </CardWrapper>
+      </Wrapper>
+    </form>
+  );
+};
 
 export default LoginView;
