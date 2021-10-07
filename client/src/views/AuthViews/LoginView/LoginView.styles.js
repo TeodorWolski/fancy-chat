@@ -53,6 +53,7 @@ export const StyledLink = styled(Link)`
   color: #ffffff;
   font-size: ${({ theme }) => theme.fontSize.xs};
   top: 14%;
+  transition: all 0.35s;
 
   &:hover {
     color: ${({ theme }) => theme.colors.moreMint};

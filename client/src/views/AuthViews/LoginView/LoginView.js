@@ -13,8 +13,8 @@ const LoginView = () => (
   <Wrapper>
     <CardWrapper>
       <StyledHeading>Fancy</StyledHeading>
-      <FormInput name="e-mail" type="email" />
-      <FormInput name="password" type="password" />
+      <FormInput placeholder="e-mail" name="e-mail" type="email" />
+      <FormInput placeholder="password" name="password" type="password" />
       <StyledButton>Log in</StyledButton>
       <StyledLink to={routes.forgotPassword}>Forgot password?</StyledLink>
       <StyledLink to={routes.register}>Need an account?</StyledLink>

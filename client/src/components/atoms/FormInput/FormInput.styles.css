@@ -41,6 +41,7 @@
   font-size: 1.6rem;
   color: white;
   transition: all 0.35s;
+  padding-top: 5rem;
 }
 
 .info-input:focus {
