@@ -25,7 +25,7 @@ const LoginView = () => {
     e.preventDefault();
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form autocomplete="off" onSubmit={handleSubmit}>
       <Wrapper>
         <CardWrapper>
           <StyledHeading>Fancy</StyledHeading>

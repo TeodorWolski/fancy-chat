@@ -4,7 +4,7 @@ import "./FormInput.styles.css";
 const FormInput = ({ name, handleChange, type, placeholder }) => (
   <div className="container">
     <input
-      autoComplete="off"
+      autocomplete="off"
       type={type}
       onChange={handleChange}
       className="info-input"
