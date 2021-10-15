@@ -8,6 +8,10 @@ import {
 } from "./RegisterView.styles";
 import FormInput from "components/atoms/FormInput/FormInput";
 import { routes } from "routes";
+import axios from "axios";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const initialState = {
   email: "",
@@ -24,9 +28,31 @@ const RegisterView = () => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formValues);
+
+    const { email, fullName, phoneNumber, password } = formValues;
+
+    const URL = `http://localhost:5000/auth`;
+
+    const {
+      data: { token, userId, hashedPassword },
+    } = await axios.post(`${URL}/register`, {
+      email,
+      fullName,
+      phoneNumber,
+      password,
+    });
+
+    cookies.set("token", token);
+    cookies.set("email", email);
+    cookies.set("fullName", fullName);
+    cookies.set("password", password);
+    cookies.set("userId", userId);
+    cookies.set("phoneNumber", phoneNumber);
+    cookies.set("hashedPassword", hashedPassword);
+
+    window.location.reload();
   };
 
   return (

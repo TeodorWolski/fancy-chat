@@ -5,20 +5,31 @@ import TeamChannelList from "components/molecules/TeamChannelList/TeamChannelLis
 import { ChannelList, useChatContext, Chat } from "stream-chat-react";
 import { StreamChat } from "stream-chat";
 import Cookies from "universal-cookie";
+import { useHistory } from "react";
 
 const ApiKey = process.env.API_KEY;
 
+// const cookies = new Cookies();
+
+// const authToken = cookies.get("token");
+
 const client = StreamChat.getInstance(ApiKey);
 
-const ChatViewTemplate = ({ children }) => (
+// if (authToken) {
+//   client.connectUser({
+
+//   })
+// }
+
+const ChatView = ({ children }) => (
   <Chat client={client}>
     <Sidebar />
     {children}
   </Chat>
 );
 
-ChatViewTemplate.propTypes = {
+ChatView.propTypes = {
   children: PropTypes.element,
 };
 
-export default ChatViewTemplate;
+export default ChatView;

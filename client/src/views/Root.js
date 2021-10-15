@@ -1,12 +1,8 @@
 import React from "react";
 import MainTemplate from "components/templates/MainTemplate/MainTemplate";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
-import ChatViewTemplate from "components/templates/ChatViewTemplate/ChatViewTemplate";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PrivateRoute from "providers/PrivateRoute";
+import ChatView from "components/organisms/ChatView/ChatView";
 import { routes } from "routes";
 import LoginView from "views/AuthViews/LoginView/LoginView";
 import RegisterView from "views/AuthViews/RegisterView/RegisterView";
@@ -17,13 +13,9 @@ const Root = () => (
       <MainTemplate>
         <Route exact path={routes.login} component={LoginView} />
         <Route exact path={routes.register} component={RegisterView} />
-        <Route
-          exact
-          path={routes.home}
-          render={() => <Redirect to={routes.login} />}
-        >
-          <ChatViewTemplate />
-        </Route>
+        <PrivateRoute exact path={routes.home}>
+          <ChatView />
+        </PrivateRoute>
       </MainTemplate>
     </Switch>
   </Router>

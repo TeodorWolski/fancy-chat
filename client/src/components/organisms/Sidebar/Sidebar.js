@@ -38,6 +38,14 @@ const Sidebar = () => (
           <ChannelPreview {...previewProps} type="team" />
         )}
       />
+      <ChannelList
+        filters={{}}
+        channelRenderFilterFn={() => {}}
+        List={(listProps) => <TeamChannelList {...listProps} type="team" />}
+        Preview={(previewProps) => (
+          <ChannelPreview {...previewProps} type="message" />
+        )}
+      />
     </ChatsWrapper>
   </Wrapper>
 );
