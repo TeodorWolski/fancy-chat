@@ -8,10 +8,6 @@ import {
 } from "./LoginView.styles";
 import FormInput from "components/atoms/FormInput/FormInput";
 import { routes } from "routes";
-import axios from "axios";
-import Cookies from "universal-cookie";
-
-const cookies = new Cookies();
 
 const initialState = {
   email: "",
@@ -25,24 +21,12 @@ const LoginView = () => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    const { email, password } = formValues;
-
-    const URL = `http://localhost:5000/auth`;
-
-    const {
-      data: { token, userId },
-    } = await axios.post(`${URL}/login`, { email, password });
-
-    cookies.set("token", token);
-    cookies.set("email", email);
-    cookies.set("password", password);
-    cookies.set("userId", userId);
   };
+
   return (
-    <form autocomplete="off" onSubmit={handleSubmit}>
+    <form autoComplete="off" onSubmit={handleSubmit}>
       <Wrapper>
         <CardWrapper>
           <StyledHeading>Fancy</StyledHeading>
