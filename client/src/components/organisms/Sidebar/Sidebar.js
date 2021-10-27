@@ -7,10 +7,12 @@ import {
   StyledHeading,
   StyledInput,
 } from "./Sidebar.styles";
+import ChannelList from "components/molecules/ChannelList/ChannelList";
 import ButtonIcon from "components/atoms/ButtonIcon/ButtonIcon";
 import ChampagneIcon from "assets/icons/ChampagneIcon.svg";
 import LogoutIcon from "assets/icons/LogoutIcon.svg";
 import TimeIcon from "assets/icons/TimeIcon.svg";
+import PencilIcon from "assets/icons/PencilIcon.svg";
 import Avatar from "components/atoms/Avatar/Avatar";
 
 const Sidebar = () => (
@@ -20,6 +22,9 @@ const Sidebar = () => (
       <StyledList>
         <li>
           <ButtonIcon icon={ChampagneIcon} />
+        </li>
+        <li>
+          <ButtonIcon icon={PencilIcon} />
         </li>
         <li>
           <ButtonIcon icon={TimeIcon} />
@@ -32,6 +37,7 @@ const Sidebar = () => (
     <ChatsWrapper>
       <StyledHeading>Fancy</StyledHeading>
       <StyledInput search />
+      <ChannelList />
     </ChatsWrapper>
   </Wrapper>
 );
