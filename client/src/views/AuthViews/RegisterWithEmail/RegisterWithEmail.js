@@ -5,7 +5,7 @@ import {
   StyledHeading,
   StyledButton,
   StyledLink,
-} from "./RegisterView.styles";
+} from "./RegisterWithEmail.styles";
 import FormInput from "components/atoms/FormInput/FormInput";
 import { routes } from "routes";
 
@@ -17,7 +17,7 @@ const initialState = {
   confirmPassword: "",
 };
 
-const RegisterView = () => {
+const RegisterWithEmail = () => {
   const [formValues, setFormValues] = useState(initialState);
 
   const handleChange = (e) => {
@@ -71,4 +71,4 @@ const RegisterView = () => {
   );
 };
 
-export default RegisterView;
+export default RegisterWithEmail;

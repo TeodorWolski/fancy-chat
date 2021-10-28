@@ -13,6 +13,11 @@ const ButtonIcon = styled.button`
   background-position: center;
   cursor: pointer;
   margin: 1rem;
+  transition: all 0.3s;
+
+  &:hover {
+    border: 2px solid ${({ theme }) => theme.colors.moreMint};
+  }
 `;
 
 export default ButtonIcon;

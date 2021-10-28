@@ -13,6 +13,7 @@ import ChampagneIcon from "assets/icons/ChampagneIcon.svg";
 import LogoutIcon from "assets/icons/LogoutIcon.svg";
 import TimeIcon from "assets/icons/TimeIcon.svg";
 import PencilIcon from "assets/icons/PencilIcon.svg";
+import AddIcon from "assets/icons/AddIcon.svg";
 import Avatar from "components/atoms/Avatar/Avatar";
 
 const Sidebar = () => (
@@ -22,6 +23,9 @@ const Sidebar = () => (
       <StyledList>
         <li>
           <ButtonIcon icon={ChampagneIcon} />
+        </li>
+        <li>
+          <ButtonIcon icon={AddIcon} />
         </li>
         <li>
           <ButtonIcon icon={PencilIcon} />
