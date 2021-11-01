@@ -6,19 +6,17 @@ import {
   StyledParagraph,
 } from "./ChannelList.styles";
 
-const ChannelList = () => (
+const ChannelList = ({ channels }) => (
   <Wrapper>
     <StyledHeading>Channels:</StyledHeading>
     <StyledList>
-      <li>
-        <StyledParagraph>Channel name</StyledParagraph>
-      </li>
-      <li>
-        <StyledParagraph>Channel name</StyledParagraph>
-      </li>
-      <li>
-        <StyledParagraph> Channel name</StyledParagraph>
-      </li>
+      {channels?.docs.map((doc) => (
+        <li>
+          <StyledParagraph id={doc.id} key={doc.id}>
+            {doc.data().name}
+          </StyledParagraph>
+        </li>
+      ))}
     </StyledList>
   </Wrapper>
 );

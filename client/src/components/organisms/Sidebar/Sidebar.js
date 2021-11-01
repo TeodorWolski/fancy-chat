@@ -16,12 +16,25 @@ import PencilIcon from "assets/icons/PencilIcon.svg";
 import AddIcon from "assets/icons/AddIcon.svg";
 import Avatar from "components/atoms/Avatar/Avatar";
 import { db } from "../../../firebase";
+import { collection, addDoc } from "firebase/firestore";
+import { useCollection } from "react-firebase-hooks/firestore";
 
 const Sidebar = () => {
+  const [channels, loading, error] = useCollection(collection(db, "rooms"));
+
   const addChannel = () => {
     const channelName = prompt("Please enter your channel name:");
 
     if (channelName) {
+      try {
+        const docRef = addDoc(collection(db, "rooms"), {
+          name: channelName,
+        });
+        console.log("Document written with ID: ", docRef.name);
+        console.log(channelName);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
     }
   };
 
@@ -50,7 +63,7 @@ const Sidebar = () => {
       <ChatsWrapper>
         <StyledHeading>Fancy</StyledHeading>
         <StyledInput search />
-        <ChannelList />
+        <ChannelList channels={channels} />
       </ChatsWrapper>
     </Wrapper>
   );

@@ -16,6 +16,7 @@ export const StyledHeading = styled(Heading)`
 
 export const StyledParagraph = styled(Paragraph)`
   font-size: ${({ theme }) => theme.fontSize.xs};
+  position: relative;
 `;
 
 export const StyledList = styled.ul`
