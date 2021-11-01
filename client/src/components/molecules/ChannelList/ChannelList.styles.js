@@ -21,4 +21,11 @@ export const StyledParagraph = styled(Paragraph)`
 
 export const StyledList = styled.ul`
   color: ${({ theme }) => theme.colors.moreMint};
+
+  > li {
+    position: relative;
+    margin-top: 1.5rem;
+    top: 1.5rem;
+    right: 2rem;
+  }
 `;
