@@ -56,7 +56,7 @@ export const StyledLink = styled(Link)`
   &:hover {
     background-color: ${({ theme }) => theme.colors.moreMint};
   }
-  /* 
+  /*
   ${({ google }) =>
     google &&
     css`

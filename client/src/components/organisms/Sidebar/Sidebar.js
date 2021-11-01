@@ -15,35 +15,45 @@ import TimeIcon from "assets/icons/TimeIcon.svg";
 import PencilIcon from "assets/icons/PencilIcon.svg";
 import AddIcon from "assets/icons/AddIcon.svg";
 import Avatar from "components/atoms/Avatar/Avatar";
+import { db } from "../../../firebase";
 
-const Sidebar = () => (
-  <Wrapper>
-    <IconsWrapper>
-      <Avatar />
-      <StyledList>
-        <li>
-          <ButtonIcon icon={ChampagneIcon} />
-        </li>
-        <li>
-          <ButtonIcon icon={AddIcon} />
-        </li>
-        <li>
-          <ButtonIcon icon={PencilIcon} />
-        </li>
-        <li>
-          <ButtonIcon icon={TimeIcon} />
-        </li>
-        <li>
-          <ButtonIcon icon={LogoutIcon} />
-        </li>
-      </StyledList>
-    </IconsWrapper>
-    <ChatsWrapper>
-      <StyledHeading>Fancy</StyledHeading>
-      <StyledInput search />
-      <ChannelList />
-    </ChatsWrapper>
-  </Wrapper>
-);
+const Sidebar = () => {
+  const addChannel = () => {
+    const channelName = prompt("Please enter your channel name:");
+
+    if (channelName) {
+    }
+  };
+
+  return (
+    <Wrapper>
+      <IconsWrapper>
+        <Avatar />
+        <StyledList>
+          <li>
+            <ButtonIcon icon={ChampagneIcon} />
+          </li>
+          <li>
+            <ButtonIcon onClick={addChannel} icon={AddIcon} />
+          </li>
+          <li>
+            <ButtonIcon icon={PencilIcon} />
+          </li>
+          <li>
+            <ButtonIcon icon={TimeIcon} />
+          </li>
+          <li>
+            <ButtonIcon icon={LogoutIcon} />
+          </li>
+        </StyledList>
+      </IconsWrapper>
+      <ChatsWrapper>
+        <StyledHeading>Fancy</StyledHeading>
+        <StyledInput search />
+        <ChannelList />
+      </ChatsWrapper>
+    </Wrapper>
+  );
+};
 
 export default Sidebar;
