@@ -15,7 +15,7 @@ export const StyledHeading = styled(Heading)`
 `;
 
 export const StyledParagraph = styled(Paragraph)`
-  font-size: ${({ theme }) => theme.fontSize.xs};
+  font-size: ${({ theme }) => theme.fontSize.s};
   position: relative;
 `;
 
@@ -24,8 +24,14 @@ export const StyledList = styled.ul`
 
   > li {
     position: relative;
-    margin-top: 1.5rem;
-    top: 1.5rem;
-    right: 2rem;
+    margin-top: 1rem;
+    top: 1rem;
+    right: 2.5rem;
+
+    &:hover {
+      transition: all 0.2s;
+      cursor: pointer;
+      color: white;
+    }
   }
 `;
