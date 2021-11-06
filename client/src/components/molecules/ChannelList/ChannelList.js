@@ -6,15 +6,15 @@ import {
   StyledParagraph,
 } from "./ChannelList.styles";
 
-const ChannelList = ({ channels }) => (
+const ChannelList = ({ channels, selectChannel }) => (
   <Wrapper>
     <StyledHeading>Channels:</StyledHeading>
     <StyledList>
       {channels?.docs.map((doc) => (
         <li>
-          <StyledParagraph id={doc.id} key={doc.id}>
+          <button onClick={selectChannel} id={doc.id} key={doc.id}>
             {doc.data().name}
-          </StyledParagraph>
+          </button>
         </li>
       ))}
     </StyledList>
