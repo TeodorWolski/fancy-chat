@@ -16,7 +16,7 @@ export const StyledHeading = styled(Heading)`
 export const Wrapper = styled.div`
   height: 100vh;
   width: 25rem;
-  margin: 0;
+  margin: 0 12rem 0 0;
   padding: 0;
   position: fixed;
   left: 0;

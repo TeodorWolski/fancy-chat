@@ -10,8 +10,9 @@ import { routes } from "routes";
 import LoginView from "views/AuthViews/LoginView/LoginView";
 import RegisterView from "views/AuthViews/RegisterView/RegisterView";
 import RegisterWithEmail from "views/AuthViews/RegisterWithEmail/RegisterWithEmail";
-import ChatView from "views/ChatView/ChatView";
+import ChatView from "views/ChatView";
 import { Provider } from "react-redux";
+import ChatViewTemplate from "components/templates/ChatViewTemplate/ChatViewTemplate";
 import store from "redux/store";
 
 const Root = () => (
@@ -19,7 +20,14 @@ const Root = () => (
     <Router>
       <Switch>
         <MainTemplate>
-          <Route exact path={routes.home} component={ChatView} />
+          <Route
+            exact
+            path={routes.home}
+            render={() => <Redirect to={routes.chat} />}
+          />
+          <ChatViewTemplate>
+            <Route path={routes.chat} />
+          </ChatViewTemplate>
           <Route exact path={routes.register} component={RegisterView} />
           <Route
             exact
