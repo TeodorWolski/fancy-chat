@@ -18,12 +18,9 @@ import Avatar from "components/atoms/Avatar/Avatar";
 import { db } from "../../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
-import { useDispatch } from "react-redux";
-import { enterRoom } from "redux/appSlice/appSlice";
 
 const Sidebar = () => {
   const [channels, loading, error] = useCollection(collection(db, "rooms"));
-  const dispatch = useDispatch();
 
   const addChannel = () => {
     const channelName = prompt("Please enter your channel name:");
@@ -31,7 +28,7 @@ const Sidebar = () => {
 
     if (channelName) {
       try {
-        const docRef = addDoc(collection(db, "rooms"), {
+        addDoc(collection(db, "rooms"), {
           name: channelName,
           id: id,
         });
@@ -39,16 +36,6 @@ const Sidebar = () => {
       } catch (e) {
         console.error("Error adding document: ", e);
       }
-    }
-  };
-
-  const selectChannel = () => {
-    if (channels.id) {
-      dispatch(
-        enterRoom({
-          roomId: channels.id,
-        })
-      );
     }
   };
 
@@ -77,7 +64,7 @@ const Sidebar = () => {
       <ChatsWrapper>
         <StyledHeading>Fancy</StyledHeading>
         <StyledInput search />
-        <ChannelList selectChannel={selectChannel} channels={channels} />
+        <ChannelList channels={channels} />
       </ChatsWrapper>
     </Wrapper>
   );
