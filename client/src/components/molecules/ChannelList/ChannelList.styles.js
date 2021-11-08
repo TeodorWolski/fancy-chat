@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Paragraph from "components/atoms/Paragraph/Paragraph";
 import Heading from "components/atoms/Heading/Heading";
+import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
   position: relative;
@@ -34,4 +35,10 @@ export const StyledList = styled.ul`
       color: white;
     }
   }
+`;
+
+export const RoomLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.moreMint};
+  font-size: ${({ theme }) => theme.fontSize.s};
 `;

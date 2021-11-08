@@ -4,6 +4,7 @@ import {
   StyledHeading,
   StyledList,
   StyledParagraph,
+  RoomLink,
 } from "./ChannelList.styles";
 
 const ChannelList = ({ channels, selectChannel }) => (
@@ -12,9 +13,9 @@ const ChannelList = ({ channels, selectChannel }) => (
     <StyledList>
       {channels?.docs.map((doc) => (
         <li>
-          <button onClick={selectChannel} id={doc.id} key={doc.id}>
+          <RoomLink id={doc.id} key={doc.id}>
             {doc.data().name}
-          </button>
+          </RoomLink>
         </li>
       ))}
     </StyledList>
