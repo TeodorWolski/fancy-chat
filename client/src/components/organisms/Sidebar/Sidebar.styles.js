@@ -13,12 +13,12 @@ export const StyledHeading = styled(Heading)`
   }
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.nav`
+  position: fixed;
   height: 100vh;
   width: 25rem;
   margin: 0 12rem 0 0;
   padding: 0;
-  position: fixed;
   left: 0;
   top: 0;
   display: flex;
