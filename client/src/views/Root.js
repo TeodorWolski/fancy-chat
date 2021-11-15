@@ -11,8 +11,7 @@ import LoginView from "views/AuthViews/LoginView/LoginView";
 import RegisterView from "views/AuthViews/RegisterView/RegisterView";
 import RegisterWithEmail from "views/AuthViews/RegisterWithEmail/RegisterWithEmail";
 import { Provider } from "react-redux";
-import ChatViewTemplate from "components/templates/ChatViewTemplate/ChatViewTemplate";
-import Chat from "components/organisms/Chat/Chat";
+import ChatView from "views/ChatView/ChatView";
 import store from "redux/store";
 
 const Root = () => (
@@ -32,11 +31,7 @@ const Root = () => (
             path={routes.registerWithEmail}
             component={RegisterWithEmail}
           />
-          <ChatViewTemplate>
-            <Route exact path={routes.chat}>
-              <Chat />
-            </Route>
-          </ChatViewTemplate>
+          <Route exact path={routes.chat} component={ChatView} />
         </Switch>
       </MainTemplate>
     </Router>

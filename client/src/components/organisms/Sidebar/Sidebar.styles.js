@@ -14,10 +14,10 @@ export const StyledHeading = styled(Heading)`
 `;
 
 export const Wrapper = styled.nav`
-  position: fixed;
+  position: relative;
   height: 100vh;
   width: 25rem;
-  margin: 0 12rem 0 0;
+  margin: 0;
   padding: 0;
   left: 0;
   top: 0;
