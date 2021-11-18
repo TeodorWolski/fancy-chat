@@ -14,10 +14,9 @@ export const StyledHeading = styled(Heading)`
 `;
 
 export const Wrapper = styled.nav`
-  position: relative;
+  position: fixed;
   height: 100vh;
   width: 25rem;
-  margin: 0;
   padding: 0;
   left: 0;
   top: 0;

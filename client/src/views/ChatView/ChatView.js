@@ -10,10 +10,12 @@ const Wrapper = styled.div`
 `;
 
 const ChatViewTemplate = () => (
-  <Wrapper>
-    <Sidebar />
-    <Chat />
-  </Wrapper>
+  <>
+    <Wrapper>
+      <Sidebar />
+      <Chat />
+    </Wrapper>
+  </>
 );
 
 ChatViewTemplate.propTypes = {};
