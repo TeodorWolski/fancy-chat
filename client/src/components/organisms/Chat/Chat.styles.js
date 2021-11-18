@@ -4,6 +4,8 @@ import Heading from "components/atoms/Heading/Heading";
 export const Wrapper = styled.div`
   position: relative;
   grid-column: 2/2;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const StyledHeading = styled(Heading)`
