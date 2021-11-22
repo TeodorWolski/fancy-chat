@@ -6,11 +6,8 @@ import {
   StyledParagraph,
   RoomLink,
 } from "./ChannelList.styles";
-import { useParams } from "react-router-dom";
 
 const ChannelList = ({ channels, selectChannel }) => {
-  const { id } = useParams();
-
   return (
     <Wrapper>
       <StyledHeading>Channels:</StyledHeading>

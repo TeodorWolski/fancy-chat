@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   grid-template-columns: repeat(2, 1fr);
 `;
 
-const ChatViewTemplate = () => (
+const ChatView = () => (
   <>
     <Wrapper>
       <Sidebar />
@@ -18,6 +18,6 @@ const ChatViewTemplate = () => (
   </>
 );
 
-ChatViewTemplate.propTypes = {};
+ChatView.propTypes = {};
 
-export default ChatViewTemplate;
+export default ChatView;
