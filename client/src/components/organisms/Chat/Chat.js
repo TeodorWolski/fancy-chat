@@ -1,17 +1,16 @@
 import React from "react";
 import ChatInput from "components/molecules/ChatInput/ChatInput";
 import { Wrapper, StyledHeading, ChatMessages } from "./Chat.styles";
-import { useChannel } from "providers/ChannelProvider";
+import { useParams } from "react-router-dom";
 
-const Chat = ({ channels }) => {
-  const { channelInfo } = useChannel();
+const Chat = () => {
+  const { channelName } = useParams();
 
   return (
     <Wrapper>
       <>
-        <StyledHeading>Room-name</StyledHeading>
-        {console.log(channelInfo)}
-        <ChatMessages>{/* Listing out the messages */}</ChatMessages>
+        <StyledHeading>{channelName}</StyledHeading>
+        <ChatMessages></ChatMessages>
         <ChatInput />
       </>
     </Wrapper>

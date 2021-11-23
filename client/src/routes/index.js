@@ -5,5 +5,5 @@ export const routes = {
   registerWithGoogle: "/register/google",
   forgotPassword: "/forgot-password",
   home: "/",
-  chat: "/chat/:id",
+  chat: "/chat/:channelName",
 };
