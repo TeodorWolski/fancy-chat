@@ -18,6 +18,7 @@ import Avatar from "components/atoms/Avatar/Avatar";
 import { db } from "../../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const [channels, loading, error] = useCollection(collection(db, "rooms"));
@@ -45,7 +46,7 @@ const Sidebar = () => {
         <Avatar />
         <StyledList>
           <li>
-            <ButtonIcon icon={ChampagneIcon} />
+            <ButtonIcon icon={ChampagneIcon} as={NavLink} to="/chat" />
           </li>
           <li>
             <ButtonIcon onClick={addChannel} icon={AddIcon} />

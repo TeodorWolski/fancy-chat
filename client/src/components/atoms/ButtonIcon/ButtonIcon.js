@@ -5,7 +5,7 @@ const ButtonIcon = styled.button`
   width: 5rem;
   background-image: url(${({ icon }) => icon});
   background-repeat: no-repeat;
-  /* background-color: ${({ active }) => (active ? "white" : "transparent")}; */
+  background-color: white !important;
   border-radius: 1.5rem;
   border: none;
   display: block;
