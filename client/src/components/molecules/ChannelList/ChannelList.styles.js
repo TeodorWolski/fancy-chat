@@ -22,16 +22,19 @@ export const StyledParagraph = styled(Paragraph)`
 
 export const StyledList = styled.ul`
   color: ${({ theme }) => theme.colors.moreMint};
+  text-transform: capitalize;
+  list-style-type: none;
 
   > li {
     position: relative;
     margin-top: 1rem;
     top: 1rem;
-    right: 2.5rem;
+    right: 3.5rem;
 
-    &:hover {
-      transition: all 0.2s;
-      cursor: pointer;
+    &::before {
+      content: "# ";
+      position: relative;
+      font-size: ${({ theme }) => theme.fontSize.s};
       color: white;
     }
   }

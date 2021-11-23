@@ -15,6 +15,7 @@ export const StyledHeading = styled(Heading)`
   position: relative;
   top: 0.5rem;
   right: 20rem;
+  text-transform: capitalize;
 
   &::before {
     content: "# ";
