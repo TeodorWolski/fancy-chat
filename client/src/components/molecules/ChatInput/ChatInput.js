@@ -9,10 +9,12 @@ const ChatInput = () => {
   const messageRef = useRef(null);
   const { channelName } = useParams();
 
-  const sendMessage = (e) => {
+  const sendMessage = async (e) => {
     e.preventDefault();
+    const roomDocRef = doc(db, "rooms");
+
     try {
-      db.collection("rooms").doc(channelName).collection("messages").add({
+      await setDoc(roomDocRef, {
         message: messageRef.current.value,
         timestamp: serverTimestamp(),
         user: "twolsh",
