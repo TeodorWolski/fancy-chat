@@ -20,7 +20,7 @@ const Root = () => (
         <Route
           exact
           path={routes.home}
-          render={() => <Redirect to={routes.chat} />}
+          render={() => <Redirect to="/chat" />}
         />
         <Route exact path={routes.register} component={RegisterView} />
         <Route exact path={routes.login} component={LoginView} />

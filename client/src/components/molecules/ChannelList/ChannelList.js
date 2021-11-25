@@ -15,12 +15,8 @@ const ChannelList = ({ channels }) => {
       <StyledHeading>Channels:</StyledHeading>
       <StyledList>
         {channels?.docs.map((doc) => (
-          <li>
-            <RoomLink
-              to={`/chat/${doc.data().name}`}
-              id={channelName}
-              key={doc.id}
-            >
+          <li key={channelName}>
+            <RoomLink to={`/chat/${doc.data().name}`} id={channelName}>
               {doc.data().name}
             </RoomLink>
           </li>

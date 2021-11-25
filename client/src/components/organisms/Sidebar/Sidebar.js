@@ -33,7 +33,6 @@ const Sidebar = () => {
           name: channelName,
           id: id,
         });
-        console.log(id);
       } catch (e) {
         console.error("Error adding document: ", e);
       }
